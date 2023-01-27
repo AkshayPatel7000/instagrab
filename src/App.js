@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import { FaDownload, FaSearch } from "react-icons/fa";
 
 let baseurl =
-  "https://c085-2402-8100-3866-2e0f-20e7-ae0a-8785-bcc1.in.ngrok.io ";
+  "https://c085-2402-8100-3866-2e0f-20e7-ae0a-8785-bcc1.in.ngrok.io";
 // let baseurl="http://localhost:5002"
 // let baseurl = "https://music-on-fire.vercel.app";
 
