@@ -1,0 +1,363 @@
+/* @import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+ * {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+}
+
+ body {
+	 background: #252525;
+}
+
+ .container .search::before {
+	 content: "";
+	 position: absolute;
+	 margin: auto;
+	 top: 44px;
+	 right: 0;
+
+	 left: 22px;
+	 width: 12px;
+	 height: 2px;
+	 background: white;
+	 transform: rotate(45deg);
+	 transition: all 0.5s;
+}
+ .container .search::after {
+	 content: "";
+	 position: absolute;
+	 margin: auto;
+	 top: 15px;
+	 right: 0;
+
+	 left: -5px;
+	 width: 25px;
+	 height: 25px;
+	 border-radius: 50%;
+	 border: 2px solid white;
+	 transition: all 0.5s;
+}
+ .container input {
+	 font-family: 'Inconsolata', monospace;
+	 position: absolute;
+	 margin: auto;
+	 top: 40px;
+	 right: 0;
+
+	 left: 0;
+	 width: 50px;
+	 height: 50px;
+	 outline: none;
+	 border: none;
+	 background: crimson;
+	 color: white;
+	 text-shadow: 0 0 10px crimson;
+	 padding: 0 80px 0 20px;
+	 border-radius: 30px;
+	 box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+	 transition: all 1s;
+	 opacity: 0;
+	 z-index: 5;
+	 font-weight: bolder;
+	 letter-spacing: 0.1em;
+}
+ .container input:hover {
+	 cursor: pointer;
+}
+ .container input:focus {
+	 width: 300px;
+	 opacity: 1;
+	 cursor: text;
+}
+ .container input:focus ~ .search {
+	 right: -250px;
+	 background: #151515;
+	 z-index: 6;
+}
+ .container input:focus ~ .search::before {
+	 top: 20px;
+	 left: 0;
+	 width: 25px;
+}
+ .container input:focus ~ .search::after {
+	 top: 20px;
+	 left: 0;
+	 width: 25px;
+	 height: 2px;
+	 border: none;
+	 background: white;
+	 border-radius: 0%;
+	 transform: rotate(-45deg);
+}
+ .container input::placeholder {
+	 color: white;
+	 opacity: 0.5;
+	 font-weight: bolder;
+}
+
+
+ */
+
+
+
+
+ .list-wrapper {
+  max-width: 400px;
+  background-color: #cb2d3d43;
+  /* margin-top: 124px; */
+    /* margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto; */
+}
+.list {
+
+  border-radius: 2px;
+  list-style: none;
+  padding: 10px 20px;
+}
+.list-item {
+  display: flex;
+  margin: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.list-item:last-child {
+  border-bottom: none;
+}
+.list-item-image {
+  border-radius: 50%;
+  width: 64px;
+}
+.list-item-content {
+  margin-left: 20px;
+}
+.list-item-content h4, .list-item-content p {
+  margin: 0;
+}
+.list-item-content h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+.list-item-content p {
+  margin-top: 5px;
+  color: #aaa;
+}
+
+
+
+/* //// */
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+/* /////// */
+
+
+
+
+/* ?????? */
+body {
+  background-image: linear-gradient(to right , #cb2d3e , #ef473a);
+}
+
+.searchBox {
+  position: sticky;
+  top: 2%;
+  right: 10%;
+  /* transform:  translate(-50%,50%); */
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+
+}
+.searchBox1 {
+  position: sticky;
+  top: 2%;
+  right: 10%;
+  /* transform:  translate(-50%,50%); */
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+background: white;
+color : #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.searchButton1{
+  color: white;
+  /* float: right; */
+  align-self: center;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+  width: 150px;
+  padding: 0 6px;
+}
+}
