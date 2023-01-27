@@ -21,14 +21,14 @@ function App() {
     };
   });
 
-  useEffect(() => {
-    const init = async () => {
-      let response = await fetch(`${baseurl}`);
-      let data = await response.json();
-      console.log(data);
-    };
-    init();
-  }, []);
+  // useEffect(() => {
+  //   const init = async () => {
+  //     let response = await fetch(`${baseurl}`);
+  //     let data = await response.json();
+  //     console.log(data);
+  //   };
+  //   init();
+  // }, []);
   const handleChange = (e) => {
     instaSearch(e.target.value);
   };
@@ -147,7 +147,7 @@ function App() {
               placeholder="Search"
               onChange={(q) => setquery(q.target.value)}
             />
-            <button class="searchButton" onClick={() => instaSearch(query)}>
+            <button class="searchButton" onClick={() => getProfile(query)}>
               <FaSearch />
             </button>
           </div>
