@@ -8,16 +8,6 @@ import { FaDownload, FaSearch } from "react-icons/fa";
 let baseurl = "https://4f7d-122-168-12-186.in.ngrok.io";
 // let baseurl="http://localhost:5002"
 // let baseurl = "https://music-on-fire.vercel.app";
-useEffect(() => {
-  const init = async () => {
-    let response = await fetch(`${baseurl}`, {
-      headers: headersList,
-    });
-    let data = await response.json();
-    console.log(data);
-  };
-  init();
-}, []);
 
 function App() {
   const [query, setquery] = useState("second");
@@ -30,6 +20,17 @@ function App() {
       debouncedResults.cancel();
     };
   });
+
+  useEffect(() => {
+    const init = async () => {
+      let response = await fetch(`${baseurl}`, {
+        headers: headersList,
+      });
+      let data = await response.json();
+      console.log(data);
+    };
+    init();
+  }, []);
   const handleChange = (e) => {
     instaSearch(e.target.value);
   };
