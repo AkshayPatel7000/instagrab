@@ -34,7 +34,7 @@ function App() {
       };
 
       let response = await fetch(
-        `${baseurl}/v1/getInstaSearch?query=${input}`,
+        `${baseurl}/api/v1/getInstaSearch?query=${input}`,
         {
           headers: headersList,
         }
