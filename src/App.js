@@ -147,7 +147,7 @@ function App() {
               placeholder="Search"
               onChange={(q) => setquery(q.target.value)}
             />
-            <button class="searchButton" onClick={() => getProfile(query)}>
+            <button class="searchButton" onClick={() => instaSearch(query)}>
               <FaSearch />
             </button>
           </div>
