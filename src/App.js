@@ -5,9 +5,9 @@ import debounce from "lodash.debounce";
 import Modal from "./Modal";
 import { FaDownload, FaSearch } from "react-icons/fa";
 
-let baseurl = "https://4f7d-122-168-12-186.in.ngrok.io";
+// let baseurl = "https://4f7d-122-168-12-186.in.ngrok.io";
 // let baseurl="http://localhost:5002"
-// let baseurl="https://music-on-fire.vercel.app"
+let baseurl = "https://music-on-fire.vercel.app";
 
 function App() {
   const [query, setquery] = useState("second");
