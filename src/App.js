@@ -23,9 +23,7 @@ function App() {
 
   useEffect(() => {
     const init = async () => {
-      let response = await fetch(`${baseurl}`, {
-        headers: headersList,
-      });
+      let response = await fetch(`${baseurl}`);
       let data = await response.json();
       console.log(data);
     };
