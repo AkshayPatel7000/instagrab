@@ -86,7 +86,7 @@ function App() {
 
     setTimeout(() => {
       getUpscaledImage(data.data.urls.get);
-    }, 5000);
+    }, 10000);
   };
 
   const getUpscaledImage = async (getUrl) => {
